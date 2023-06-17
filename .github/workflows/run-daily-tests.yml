@@ -19,7 +19,6 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@master
       - name: Pull docker image for apodview and apodapi 
-        uses: addnab/docker-run-action@v3
         shell: sh
         run: |
           #!/bin/sh
