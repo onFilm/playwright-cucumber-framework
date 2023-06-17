@@ -1,0 +1,18 @@
+# This workflow will build APOD app and run playwright tests against same.
+name: run-daily-tests
+
+on:
+  push: 
+    branches: [ "master" ]
+  pull_request:
+    branches: 
+      - master
+    types: [closed]
+  workflow_dispatch:
+
+jobs:
+  run-daily-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v2
