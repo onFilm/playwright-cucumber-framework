@@ -4,9 +4,9 @@
   "description": "Starter project to write and debug cucumber-js features with Playwright",
   "main": "index.js",
   "scripts": {
-    "all": "cucumber-js features/**/*.feature",
-    "pretest": "npx ts-node utils/init.ts",
-    "test": "cross-env ENV=stable HEADLESS=false cucumber-js --tags @demo",
+    "all": "cucumber-js features/*.feature",
+    "pretest": "npx ts-node src/utils/setup/init.ts",
+    "test": "cross-env ENV=stable HEADLESS=false npx cucumber-js --tags=@all",
     "testsauce": "saucectl run --region us-west-1 --build playwright-build-VDO5T",
     "test:parallel": "cucumber-js --parallel=2",
     "allure": "allure serve reports/allure-results",

@@ -14,6 +14,6 @@ export class BasePage {
   }
 
   public screenshot(name: string): Promise<Buffer> | undefined {
-    return this.page.screenshot({path: join("screenshots", `${name}.png`)});
+    return this.iCustomWorld.page?.screenshot({path: join("screenshots", `${name}.png`)});
   }
 }

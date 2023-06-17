@@ -6,7 +6,8 @@ const getWorldParams = () => {
 
 const config = {
   requireModule: ['ts-node/register'],
-  require: ['/src/main/step-definitions/*.ts', '/src/main/utils/setup/*.ts', 'src/main/utils/*.ts', 'src/main/hooks/*.ts'],
+  paths: ["src/features"],
+  require: ['src/step-definitions/*.ts', 'src/utils/setup/*.ts', 'src/utils/*.ts', 'src/hooks/*.ts'],
   format: [
 	'json:reports/cucumber-report.json',
 	'html:reports/report.html',
@@ -21,7 +22,7 @@ const config = {
 };
 
 if (process.env.USE_ALLURE) {
-  config.format.push('./src/utils/allure-reporter.ts:./report.txt');
+  config.format.push('./src/utils/setup/allure-reporter.ts:./report.txt');
 } else {
   config.format.push('@cucumber/pretty-formatter');
 }

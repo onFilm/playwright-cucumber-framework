@@ -13,11 +13,11 @@ When("I axe this page", async function (this: ICustomWorld) {
   });
   createHtmlReport({
     results: {
-	  violations: await getViolations(this.page!, undefined)
+	    violations: await getViolations(this.page!, undefined)
     },
     options: {
-	  outputDir: "reports",
-	  reportFileName: "accessibility-report.html"
+      outputDir: "reports",
+      reportFileName: "accessibility-report.html"
     }
   }); // passing only violations from axe.run output
 });

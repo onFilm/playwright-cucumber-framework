@@ -16,6 +16,7 @@ import { getCall } from "../utils/apiUtils";
 let browser: ChromiumBrowser | FirefoxBrowser | WebKitBrowser;
 const tracesDir = "reports/traces";
 const harsDir = "reports/hars/";
+const videoDir = "reports/video/";
 
 setDefaultTimeout(process.env.PWDEBUG ? -1 : 60 * 1000);
 
@@ -58,6 +59,7 @@ Before(async function ({pickle}: ITestCaseHookParameter) {
 });
 
 Before(async function (this: ICustomWorld, {pickle}: ITestCaseHookParameter) {
+  console.log("Inside before hook");
   this.testEnv = process.env.ENV;
   this.browser = process.env.BROWSER;
   this.baseurl = process.env.BASEURL;
@@ -71,6 +73,9 @@ Before(async function (this: ICustomWorld, {pickle}: ITestCaseHookParameter) {
   // customize the [browser context](https://playwright.dev/docs/next/api/class-browser#browsernewcontextoptions)
   this.context = await browser.newContext({
     recordHar: {path: harsDir + this.logFileName + ".har", urlFilter: "**/api/**"},
+    recordVideo: {
+      dir: videoDir,
+    },
     strictSelectors: false,
     acceptDownloads: true,
     viewport: null
@@ -95,18 +100,20 @@ Before(async function (this: ICustomWorld, {pickle}: ITestCaseHookParameter) {
 
 After(async function (this: ICustomWorld, {result}: ITestCaseHookParameter) {
   if (result) {
-    await this.attach(`Status: ${result?.status}. Duration:${result.duration?.seconds}s`);
+    this.attach(`Status: ${result?.status}. Duration:${result.duration?.seconds}s`);
     if (result.status !== Status.PASSED) {
-	  const image = await this.page?.screenshot();
-	  image && (await this.attach(image, "image/png"));
-	  await this.page?.close();
-	  await this.context?.close();
-	  await this.attach(fs.readFileSync(`reports/logs/${this.logFileName}/log.log`).toString("utf-8"), "text/plain");
-      await this.attach(fs.readFileSync(`reports/console/${this.logFileName}/log.log`).toString("utf-8"), "text/plain");
-      await this.attach(fs.readFileSync(harsDir + this.logFileName + ".har").toString("utf-8"), "application/json");
+      const image = await this.page?.screenshot();
+      image && (this.attach(image, "image/png"));
+      const video = await this.page?.video()?.path();
+      video && this.attach(video, 'video/webm');
+      await this.page?.close();
+      await this.context?.close();
+      this.attach(fs.readFileSync(`reports/logs/${this.logFileName}/log.log`).toString("utf-8"), "text/plain");
+      this.attach(fs.readFileSync(`reports/console/${this.logFileName}/log.log`).toString("utf-8"), "text/plain");
+      this.attach(fs.readFileSync(harsDir + this.logFileName + ".har").toString("utf-8"), "application/json");
     } else {
-	  await this.page?.close();
-	  await this.context?.close();
+      await this.page?.close();
+      await this.context?.close();
     }
   }
 });
