@@ -16,3 +16,20 @@ jobs:
     steps:
       - name: checkout repo
         uses: actions/checkout@v2
+
+      - name: pull, run the apod-view and apod-api
+        script: |
+          #!/bin/sh
+                    
+          # Pull apod-view:latest 
+          sudo docker pull mail2prajwal12/apod-view:latest
+          sudo docker run -d -p 7777:7777 --network=apod-localnet --name apod-view mail2prajwal12/apod-view:latest
+
+          # Pull the Docker Image 
+          sudo docker pull mail2prajwal12/apod-api:latest
+          sudo docker run -d -p 8888:8888 --network=apod-localnet --name apod-api mail2prajwal12/apod-api:latest
+
+        - name: run the playwright tests
+          script: |
+            #!/bin/sh
+            npm ci && ENV=stable HEADLESS=false npx cucumber-js --tags=@all
