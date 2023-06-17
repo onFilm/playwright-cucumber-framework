@@ -15,7 +15,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+      - name: Setup node
+        uses: actions/setup-node@master
       - name: pull, run the apod-view and apod-api
         script: |
           #!/bin/sh
@@ -29,6 +31,4 @@ jobs:
           sudo docker run -d -p 8888:8888 --network=apod-localnet --name apod-api mail2prajwal12/apod-api:latest
 
         - name: run the playwright tests
-          script: |
-            #!/bin/sh
-            npm ci && ENV=stable HEADLESS=false npx cucumber-js --tags=@all
+          run: npm ci && ENV=stable HEADLESS=false npx cucumber-js --tags=@all
