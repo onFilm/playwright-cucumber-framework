@@ -3,7 +3,7 @@ name: run-daily-tests
 
 on:
   push: 
-    branches: [ "master" ]
+    branches: [ "master"]
   pull_request:
     branches: 
       - master
@@ -18,17 +18,16 @@ jobs:
         uses: actions/checkout@v3
       - name: Setup node
         uses: actions/setup-node@master
-      - name: pull, run the apod-view and apod-api
-        script: |
+      - name: Pull docker image for apodview and apodapi 
+        uses: addnab/docker-run-action@v3
+        shell: sh
+        run: |
           #!/bin/sh
-                    
           # Pull apod-view:latest 
           sudo docker pull mail2prajwal12/apod-view:latest
           sudo docker run -d -p 7777:7777 --network=apod-localnet --name apod-view mail2prajwal12/apod-view:latest
-
           # Pull the Docker Image 
           sudo docker pull mail2prajwal12/apod-api:latest
           sudo docker run -d -p 8888:8888 --network=apod-localnet --name apod-api mail2prajwal12/apod-api:latest
-
-        - name: run the playwright tests
-          run: npm ci && ENV=stable HEADLESS=false npx cucumber-js --tags=@all
+      - name: run the playwright tests
+        run: npm ci && ENV=stable HEADLESS=false npx cucumber-js --tags=@all
