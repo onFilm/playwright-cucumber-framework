@@ -1,0 +1,19 @@
+# This workflow will build the pull-request code
+name: pull-request
+
+on:
+  push: 
+      branches: [ "master" ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@master
+      - name: Install dependencies
+        run: npm ci && npm run lint && npm run build

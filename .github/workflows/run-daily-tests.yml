@@ -2,12 +2,8 @@
 name: run-daily-tests
 
 on:
-  push: 
-    branches: [ "master"]
-  pull_request:
-    branches: 
-      - master
-    types: [closed]
+  schedule:
+    - cron: '0 10 * * *'
   workflow_dispatch:
 
 jobs:
