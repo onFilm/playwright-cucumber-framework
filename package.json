@@ -6,7 +6,7 @@
   "scripts": {
     "all": "cucumber-js features/*.feature",
     "pretest": "npx ts-node src/utils/setup/init.ts",
-    "test": "cross-env ENV=stable HEADLESS=false npx cucumber-js --tags=@all",
+    "test": "cross-env ENV=stable cucumber-js --tags=@all",
     "testsauce": "saucectl run --region us-west-1 --build playwright-build-VDO5T",
     "test:parallel": "cucumber-js --parallel=2",
     "allure": "allure serve reports/allure-results",
