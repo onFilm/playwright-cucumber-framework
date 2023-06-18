@@ -20,3 +20,8 @@ fs.ensureDir("reports/console").then(() => {
 }).catch(err => {
   console.log("reports/console folder not created! " + err);
 });
+fs.ensureDir("reports/video").then(() => {
+  fs.emptyDir("reports/video");
+}).catch(err => {
+  console.log("reports/video folder not created! " + err);
+});
