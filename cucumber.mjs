@@ -10,7 +10,7 @@ const config = {
   require: ['src/step-definitions/*.ts', 'src/utils/setup/*.ts', 'src/utils/*.ts', 'src/hooks/*.ts'],
   format: [
 	'json:reports/cucumber-report.json',
-	'html:reports/report.html',
+	'html:reports/index.html',
 	'rerun:@failedrerun.txt'
   ],
   formatOptions: {snippetInterface: 'async-await'},
