@@ -1,5 +1,5 @@
 import {ICustomWorld} from "./custom-world";
-import {After, AfterAll, Before, BeforeAll, setDefaultTimeout, Status} from "@cucumber/cucumber";
+import {After, AfterAll, Before, BeforeAll, setDefaultTimeout} from "@cucumber/cucumber";
 import {ChromiumBrowser, FirefoxBrowser, WebKitBrowser} from "@playwright/test";
 import {ITestCaseHookParameter} from "@cucumber/cucumber/lib/support_code_library_builder/types";
 import {ensureDir} from "fs-extra";
