@@ -99,23 +99,18 @@ Before(async function (this: ICustomWorld, {pickle}: ITestCaseHookParameter) {
   this.pageObject = new AllPagesObject(this);
 });
 
-After(async function (this: ICustomWorld, {result}: ITestCaseHookParameter) {
+After(async function (this: ICustomWorld, { result }: ITestCaseHookParameter) {
   if (result) {
     this.attach(`Status: ${result?.status}. Duration:${result.duration?.seconds}s`);
-    if (result.status !== Status.PASSED) {
-      const image = await this.page?.screenshot();
-      image && (this.attach(image, "image/png"));
-      const video = await this.page?.video()?.path();
-      video && this.attach(video, "video/webm");
-      await this.page?.close();
-      await this.context?.close();
-      this.attach(fs.readFileSync(`reports/logs/${this.logFileName}/log.log`).toString("utf-8"), "text/plain");
-      this.attach(fs.readFileSync(`reports/console/${this.logFileName}/log.log`).toString("utf-8"), "text/plain");
-      this.attach(fs.readFileSync(harsDir + this.logFileName + ".har").toString("utf-8"), "application/json");
-    } else {
-      await this.page?.close();
-      await this.context?.close();
-    }
+    const image = await this.page?.screenshot();
+    image && (this.attach(image, "image/png"));
+    const video = await this.page?.video()?.path();
+    video && this.attach(video, "video/webm");
+    await this.page?.close();
+    await this.context?.close();
+    this.attach(fs.readFileSync(`reports/logs/${this.logFileName}/log.log`).toString("utf-8"), "text/plain");
+    this.attach(fs.readFileSync(`reports/console/${this.logFileName}/log.log`).toString("utf-8"), "text/plain");
+    this.attach(fs.readFileSync(harsDir + this.logFileName + ".har").toString("utf-8"), "application/json");
   }
 });
 
