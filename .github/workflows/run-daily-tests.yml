@@ -31,3 +31,7 @@ jobs:
         with:
           name: test-reports
           path: reports
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: reports # The folder the action should deploy.
