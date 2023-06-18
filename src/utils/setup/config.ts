@@ -17,7 +17,7 @@ const browserOptions: LaunchOptions = {
     "--use-fake-ui-for-media-stream",
     "--use-fake-device-for-media-stream",
     "--disable-web-security",
-    "--allow-insecure-localhost",],
+    "--allow-insecure-localhost"],
   downloadsPath: "outputs",
   firefoxUserPrefs: {
     "media.navigator.streams.fake": true,
