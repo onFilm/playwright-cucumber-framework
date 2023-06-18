@@ -1,0 +1,107 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "user-authentication-tests;login-to-swaglabs",
+        "keyword": "Scenario Outline",
+        "line": 14,
+        "name": "Login to SwagLabs",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 295305
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 122545695
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "User navigates to the application",
+            "match": {
+              "location": "src/step-definitions/login.steps.ts:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10561825233
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 9,
+            "name": "I login to SwagLabs app with username \"standard_user\" and password \"secret_sauce\"",
+            "match": {
+              "location": "src/step-definitions/login.steps.ts:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 9758547
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "I print the credential in console",
+            "match": {
+              "location": "src/step-definitions/login.steps.ts:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2861013
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 97535774
+            },
+            "embeddings": [
+              {
+                "data": "Status: PASSED. Duration:0s",
+                "mime_type": "text/plain"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@all",
+            "line": 1
+          },
+          {
+            "name": "@all",
+            "line": 7
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "user-authentication-tests",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "User Authentication tests",
+    "tags": [
+      {
+        "name": "@all",
+        "line": 1
+      }
+    ],
+    "uri": "src/features/login.feature"
+  }
+]
