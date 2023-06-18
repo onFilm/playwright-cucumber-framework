@@ -63,6 +63,7 @@ Before(async function (this: ICustomWorld, {pickle}: ITestCaseHookParameter) {
   this.testEnv = process.env.ENV;
   this.browser = process.env.BROWSER;
   this.baseurl = process.env.BASEURL;
+  this.apiurl = process.env.APIURL;
   this.feature = pickle;
   this.startTime = new Date();
   this.testName = pickle.name.replace(/\W/g, "-");

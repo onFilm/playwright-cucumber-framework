@@ -9,6 +9,7 @@ export interface ICustomWorld extends World {
   testEnv?: string;
   browser?: string;
   baseurl?: string;
+  apiurl?: string;
   defaultTimeout?: number;
   debug: boolean;
   feature?: messages.Pickle;

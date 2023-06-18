@@ -1,7 +1,7 @@
 import { ICustomWorld } from "../hooks/custom-world";
 
 export async function getCall(iCustomWorld: ICustomWorld) {
-  const apiUrl = "https://google.com/";
+  const apiUrl = process.env.APIURL || "https://google.com/";
   console.log("API URL", apiUrl);
   const response = await iCustomWorld.server?.post(apiUrl, {
     data: "",

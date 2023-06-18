@@ -10,7 +10,7 @@ jobs:
   run-daily-tests:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout repo
+      - name: Checkout repo
         uses: actions/checkout@v3
       - name: Setup node
         uses: actions/setup-node@master
@@ -24,10 +24,10 @@ jobs:
           # Pull the Docker Image 
           sudo docker pull mail2prajwal12/apod-api:latest
           sudo docker run -itd -p 8888:8888 --name apod-api mail2prajwal12/apod-api:latest
-      - name: run the playwright tests
+      - name: Run the playwright tests
         run: npm ci && ENV=stable npx cucumber-js --tags=@all
-      - name: Deploy cucumber report to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Archive test results
+        uses: actions/upload-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./reports
+          name: test-reports
+          path: reports
