@@ -25,10 +25,4 @@ jobs:
           sudo docker pull mail2prajwal12/apod-api:latest
           sudo docker run -itd -p 8888:8888 --name apod-api mail2prajwal12/apod-api:latest
       - name: run the playwright tests
-        run: npm ci && ENV=stable cucumber-js --tags=@all
-
-      # - name: Deploy cucumber report to gh-pages
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     publish_dir: ./reports
+        run: npm ci && ENV=stable npx cucumber-js --tags=@all
