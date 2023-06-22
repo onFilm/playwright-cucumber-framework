@@ -73,7 +73,7 @@ Before(async function (this: ICustomWorld, {pickle}: ITestCaseHookParameter) {
 
   // customize the [browser context](https://playwright.dev/docs/next/api/class-browser#browsernewcontextoptions)
   this.context = await browser.newContext({
-    recordHar: {path: harsDir + this.logFileName + ".har", urlFilter: "**/api/**"},
+    recordHar: {path: harsDir + this.logFileName + ".har", urlFilter: "**/apod/**"},
     recordVideo: {
       dir: videoDir
     },
