@@ -35,3 +35,16 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: reports # The folder the action should deploy.
+  slack-notification:
+    name: Slack Notification On Test Completion
+    runs-on: ubuntu-latest
+    needs: run-daily-tests
+    steps:
+    - uses: actions/checkout@v2
+    - name: Slack Notification
+      uses: rtCamp/action-slack-notify@v2
+      env:
+        SLACK_MESSAGE: 'Test Completed :rocket:'
+        SLACK_TITLE: Playwright Cucumber Daily Tests
+        SLACK_COLOR: ${{ job.status }}
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
