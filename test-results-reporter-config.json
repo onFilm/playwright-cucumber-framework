@@ -1,0 +1,65 @@
+{
+    "reports": [
+      {
+        "targets": [
+          {
+            "name": "slack",
+            "inputs": {
+              "url": "https://hooks.slack.com/services/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"
+            },
+            "extensions": [
+              {
+                "name": "hyperlinks",
+                "inputs": {
+                  "links": [
+                    {
+                      "text": "Build",
+                      "url": "{GITHUB_SERVER_URL}/{GITHUB_REPOSITORY}/actions/runs/{GITHUB_RUN_ID}"
+                    },
+                    {
+                        "text": "Cucumber HTML Report",
+                        "url": "https://onfilm.github.io/playwright-cucumber-framework/"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "mentions",
+                "inputs": {
+                  "users": [
+                    {
+                      "name": "Prajwal",
+                      "slack_uid": "U8HV37U4V"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "metadata",
+                "inputs": {
+                  "data": [
+                    {
+                      "key": "Browser",
+                      "value": "Chromium-Headless"
+                    },
+                    {
+                      "value": "1920*1080"
+                    }
+                  ]
+                }
+              }              
+            ]
+          }
+        ],
+        "results": [
+          {
+            "type": "cucumber",
+            "files": [
+              "reports/cucumber-report.json"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  
