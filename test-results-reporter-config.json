@@ -5,7 +5,7 @@
           {
             "name": "slack",
             "inputs": {
-              "url": "https://hooks.slack.com/services/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"
+              "url": "${{ secrets.SLACK_WEBHOOK }}"
             },
             "extensions": [
               {
