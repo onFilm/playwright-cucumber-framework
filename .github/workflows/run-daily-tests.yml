@@ -28,7 +28,9 @@ jobs:
       - name: Run the playwright tests
         run: npm ci && ENV=stable npx cucumber-js --tags=@all
       - name: Send Slack Notification using test-results-reporter
-        run: SLACK_WEBHOOK=${{ secrets.SLACK_WEBHOOK }} && npx test-results-reporter publish -c test-results-reporter-config.json
+        env:
+            SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        run: npx test-results-reporter publish -c test-results-reporter-config.json
       - name: Archive test results
         uses: actions/upload-artifact@v3
         with:
