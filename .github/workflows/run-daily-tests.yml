@@ -8,6 +8,7 @@ on:
 
 jobs:
   run-daily-tests:
+    name: Run Daily Tests
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
