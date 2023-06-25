@@ -1,0 +1,5 @@
+{"level":"info"}
+{"level":"info","message":"request - >> GET http://127.0.0.1:7777/"}
+{"level":"info","message":"response - << 404 http://127.0.0.1:7777/"}
+{"level":"info","message":"Navigated to the application"}
+{"level":"info","message":" Test step"}
