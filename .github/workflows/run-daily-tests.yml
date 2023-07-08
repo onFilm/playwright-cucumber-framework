@@ -3,7 +3,7 @@ name: run-daily-tests
 
 on:
   schedule:
-    - cron: '0 10 * * *'
+    - cron: '0 11 * * *'
   workflow_dispatch:
 
 jobs:
