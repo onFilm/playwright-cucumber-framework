@@ -14,7 +14,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 318601
+              "duration": 282007
             }
           },
           {
@@ -22,7 +22,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 155985697
+              "duration": 380759689
             }
           },
           {
@@ -35,7 +35,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 10060559206
+              "duration": 10048216448
             }
           },
           {
@@ -48,7 +48,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 10903847
+              "duration": 17610862
             }
           },
           {
@@ -61,7 +61,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1391305
+              "duration": 1392636
             }
           },
           {
@@ -69,7 +69,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 1505487723
+              "duration": 1465276629
             },
             "embeddings": [
               {
@@ -81,7 +81,7 @@
                 "mime_type": "image/png"
               },
               {
-                "data": "reports/video/db5005662e16364a7afc010cebb57b4c.webm",
+                "data": "reports/video/66210e73943f5af43431837750af0f6b.webm",
                 "mime_type": "video/webm"
               },
               {
@@ -93,7 +93,7 @@
                 "mime_type": "text/plain"
               },
               {
-                "data": "{\n  \"log\": {\n    \"version\": \"1.2\",\n    \"creator\": {\n      \"name\": \"Playwright\",\n      \"version\": \"1.35.0\"\n    },\n    \"browser\": {\n      \"name\": \"chromium\",\n      \"version\": \"115.0.5790.24\"\n    },\n    \"pages\": [\n      {\n        \"startedDateTime\": \"2023-10-07T11:07:12.446Z\",\n        \"id\": \"page@e28eeb5756eb471b818aa1739b8979d6\",\n        \"title\": \"Error\",\n        \"pageTimings\": {\n          \"onContentLoad\": 113,\n          \"onLoad\": 113\n        }\n      }\n    ],\n    \"entries\": []\n  }\n}",
+                "data": "{\n  \"log\": {\n    \"version\": \"1.2\",\n    \"creator\": {\n      \"name\": \"Playwright\",\n      \"version\": \"1.35.0\"\n    },\n    \"browser\": {\n      \"name\": \"chromium\",\n      \"version\": \"115.0.5790.24\"\n    },\n    \"pages\": [\n      {\n        \"startedDateTime\": \"2023-10-08T11:06:59.773Z\",\n        \"id\": \"page@587a51c7304b7e4f78474eef83230bd2\",\n        \"title\": \"Error\",\n        \"pageTimings\": {\n          \"onContentLoad\": 216,\n          \"onLoad\": 216\n        }\n      }\n    ],\n    \"entries\": []\n  }\n}",
                 "mime_type": "application/json"
               }
             ]
