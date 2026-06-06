@@ -10,7 +10,7 @@ export class BrowserFactory {
   public async launchBrowser(): Promise<Browser> {
     if (this.browser) return this.browser;
 
-    const { BROWSER, HEADLESS } = ConfigManager.config;
+    const { BROWSER } = ConfigManager.config;
     const options = ConfigManager.browserOptions;
 
     switch (BROWSER) {

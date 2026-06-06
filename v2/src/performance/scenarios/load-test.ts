@@ -2,6 +2,7 @@
 import http from "k6/http";
 import { check, sleep } from "k6";
 import { UserMapper } from "../../domain/models/User";
+// @ts-ignore
 import { htmlReport } from "https://raw.githubusercontent.com/benc-uk/k6-reporter/main/dist/bundle.js";
 
 export const options = {

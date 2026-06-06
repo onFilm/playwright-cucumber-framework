@@ -2,6 +2,7 @@
 import http from "k6/http";
 import { check, sleep } from "k6";
 import { getProfile } from "../config/load-profiles";
+// @ts-ignore
 import { htmlReport } from "https://raw.githubusercontent.com/benc-uk/k6-reporter/main/dist/bundle.js";
 
 // __ENV.PROFILE passed from CLI, default to standard
