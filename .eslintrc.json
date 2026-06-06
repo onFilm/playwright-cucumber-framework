@@ -40,13 +40,17 @@
           "classMethod"
         ],
         "format": [
-          "camelCase"
+          "camelCase",
+          "PascalCase",
+          "UPPER_CASE"
         ]
       },
       {
         "selector": "variableLike",
         "format": [
-          "camelCase"
+          "camelCase",
+          "PascalCase",
+          "UPPER_CASE"
         ]
       }
     ],

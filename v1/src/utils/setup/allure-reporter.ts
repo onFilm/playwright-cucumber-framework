@@ -1,6 +1,5 @@
 import {AllureRuntime, CucumberJSAllureFormatter} from "allure-cucumberjs";
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 function Reporter(options: never) {
   return new CucumberJSAllureFormatter(
     options,

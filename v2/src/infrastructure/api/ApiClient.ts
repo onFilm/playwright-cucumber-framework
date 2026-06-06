@@ -1,7 +1,7 @@
-import { APIRequestContext, request } from 'playwright-core';
-import { ConfigManager } from '../config/ConfigManager';
-import { LoggerService } from '../logger/LoggerService';
-import { singleton } from 'tsyringe';
+import { APIRequestContext, request } from "playwright-core";
+import { ConfigManager } from "../config/ConfigManager";
+import { LoggerService } from "../logger/LoggerService";
+import { singleton } from "tsyringe";
 
 @singleton()
 export class ApiClient {
@@ -11,7 +11,6 @@ export class ApiClient {
     if (this.apiContexts.has(scenarioId)) {
       return this.apiContexts.get(scenarioId)!;
     }
-
     const { BASEURL, APIURL } = ConfigManager.config;
     const baseURL = APIURL || BASEURL;
 
@@ -19,7 +18,7 @@ export class ApiClient {
       baseURL,
       ignoreHTTPSErrors: true, // For testing environments
       extraHTTPHeaders: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36'
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
       }
     });
 

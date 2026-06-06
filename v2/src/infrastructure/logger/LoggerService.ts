@@ -1,10 +1,10 @@
-import { createLogger, format, transports, Logger } from 'winston';
-import * as fs from 'fs-extra';
-import { join } from 'path';
+import { createLogger, format, transports, Logger } from "winston";
+import * as fs from "fs-extra";
+import { join } from "path";
 
 export class LoggerService {
   private static loggers = new Map<string, Logger>();
-  private static readonly LOG_DIR = 'artifacts/logs';
+  private static readonly LOG_DIR = "artifacts/logs";
 
   public static initialize(): void {
     fs.ensureDirSync(this.LOG_DIR);
@@ -18,9 +18,9 @@ export class LoggerService {
     const logPath = join(this.LOG_DIR, `${scenarioId}.log`);
     
     const logger = createLogger({
-      level: process.env.PWDEBUG ? 'debug' : 'info',
+      level: process.env.PWDEBUG ? "debug" : "info",
       format: format.combine(
-        format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
+        format.timestamp({ format: "YYYY-MM-DD HH:mm:ss" }),
         format.printf(({ timestamp, level, message }) => `${timestamp} [${level.toUpperCase()}]: ${message}`)
       ),
       transports: [

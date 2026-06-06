@@ -1,6 +1,6 @@
-import { Browser, BrowserContext, Page, chromium, firefox, webkit } from 'playwright-core';
-import { ConfigManager } from '../config/ConfigManager';
-import { singleton } from 'tsyringe';
+import { Browser, BrowserContext, Page, chromium, firefox, webkit } from "playwright-core";
+import { ConfigManager } from "../config/ConfigManager";
+import { singleton } from "tsyringe";
 
 @singleton()
 export class BrowserFactory {
@@ -10,17 +10,17 @@ export class BrowserFactory {
   public async launchBrowser(): Promise<Browser> {
     if (this.browser) return this.browser;
 
-    const { BROWSER } = ConfigManager.config;
+    const { BROWSER, HEADLESS } = ConfigManager.config;
     const options = ConfigManager.browserOptions;
 
     switch (BROWSER) {
-      case 'firefox':
+      case "firefox":
         this.browser = await firefox.launch(options);
         break;
-      case 'webkit':
+      case "webkit":
         this.browser = await webkit.launch(options);
         break;
-      case 'chromium':
+      case "chromium":
       default:
         this.browser = await chromium.launch(options);
         break;

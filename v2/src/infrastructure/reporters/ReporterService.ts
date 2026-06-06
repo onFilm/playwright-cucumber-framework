@@ -1,6 +1,6 @@
 
-import * as fs from 'fs-extra';
-import { join } from 'path';
+import * as fs from "fs-extra";
+import { join } from "path";
 
 // Since Allure expects an attachment call from the CustomWorld 'this',
 // we will accept the custom world's attach function as a parameter.

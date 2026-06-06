@@ -33,7 +33,7 @@ Then("the response should contain valid user data for {string}", async function 
 
 When("I create a new user with name {string} and job {string}", async function (this: ICustomWorld, name: string, job: string) {
   const api = this.container!.resolve(ApiClient);
-  response = await api.post(this.sid!, `https://jsonplaceholder.typicode.com/users`, {
+  response = await api.post(this.sid!, "https://jsonplaceholder.typicode.com/users", {
     data: { name, job }
   });
   const body = await response.json();
@@ -43,7 +43,7 @@ When("I create a new user with name {string} and job {string}", async function (
 When("I update the user's job to {string}", async function (this: ICustomWorld, newJob: string) {
   const api = this.container!.resolve(ApiClient);
   // JSONPlaceholder doesn't persist id 11 from POST, so PUT returns 500. We PUT to id 1.
-  response = await api.put(this.sid!, `https://jsonplaceholder.typicode.com/users/1`, {
+  response = await api.put(this.sid!, "https://jsonplaceholder.typicode.com/users/1", {
     data: { job: newJob }
   });
 });

@@ -1,4 +1,4 @@
-import { Given, setDefaultTimeout } from "@cucumber/cucumber";
+import { Given, setDefaultTimeout , DataTable } from "@cucumber/cucumber";
 import { expect } from "@playwright/test";
 import { ICustomWorld } from "../hooks/custom-world";
 import { ConfigManager } from "../../infrastructure/config/ConfigManager";
@@ -24,7 +24,6 @@ Given("I print the credential in console", async function (this: ICustomWorld) {
   expect(true).toBeTruthy();
 });
 
-import { DataTable } from "@cucumber/cucumber";
 import { UserMapper } from "../../domain/models/User";
 // import { ApiClient } from "../../infrastructure/api/ApiClient";
 
