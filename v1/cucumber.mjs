@@ -6,8 +6,8 @@ const getWorldParams = () => {
 
 const config = {
   requireModule: ['ts-node/register'],
-  paths: ["src/features"],
-  require: ['src/step-definitions/*.ts', 'src/utils/setup/*.ts', 'src/utils/*.ts', 'src/hooks/*.ts'],
+  paths: ["v1/src/features"],
+  require: ['v1/src/step-definitions/*.ts', 'v1/src/utils/setup/*.ts', 'v1/src/utils/*.ts', 'v1/src/hooks/*.ts'],
   format: [
 	'json:reports/cucumber-report.json',
 	'html:reports/index.html',

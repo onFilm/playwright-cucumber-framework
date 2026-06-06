@@ -73,3 +73,5 @@ dist/
 docs/
 outputs/
 reports/
+artifacts/
+v2/dist/
