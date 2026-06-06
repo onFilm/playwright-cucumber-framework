@@ -70,7 +70,6 @@ reports/traces/
 #build
 build
 dist/
-docs/
 outputs/
 reports/
 artifacts/
