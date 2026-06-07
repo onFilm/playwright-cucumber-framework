@@ -1,0 +1,445 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "reqres-user-management-api;fetch-a-specific-user-successfully",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Fetch a specific user successfully",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 14033969
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "I request the user with ID 2",
+            "match": {
+              "location": "v2/src/application/steps/api.steps.ts:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 98527209
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "the API response status should be 200",
+            "match": {
+              "location": "v2/src/application/steps/api.steps.ts:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2897079
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "the response should contain valid user data for \"Ervin Howell\"",
+            "match": {
+              "location": "v2/src/application/steps/api.steps.ts:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4529265
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2538661
+            },
+            "embeddings": [
+              {
+                "data": "Status: PASSED. Duration:0s",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "2026-06-07 06:10:01 [INFO]: Starting scenario: Fetch-a-specific-user-successfully\n2026-06-07 06:10:01 [INFO]: API GET Request: https://jsonplaceholder.typicode.com/users/2\n2026-06-07 06:10:01 [INFO]: API GET Response: 200\n",
+                "mime_type": "text/plain"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@all",
+            "line": 1
+          },
+          {
+            "name": "@api",
+            "line": 1
+          },
+          {
+            "name": "@reqres",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "reqres-user-management-api;attempt-to-fetch-a-non-existent-user",
+        "keyword": "Scenario",
+        "line": 9,
+        "name": "Attempt to fetch a non-existent user",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2617179
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "I attempt to fetch a non-existent user with ID 999",
+            "match": {
+              "location": "v2/src/application/steps/api.steps.ts:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 50315444
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "the API response status should be 404",
+            "match": {
+              "location": "v2/src/application/steps/api.steps.ts:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 484749
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1322199
+            },
+            "embeddings": [
+              {
+                "data": "Status: PASSED. Duration:0s",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "2026-06-07 06:10:01 [INFO]: Starting scenario: Attempt-to-fetch-a-non-existent-user\n2026-06-07 06:10:01 [INFO]: API GET Request: https://jsonplaceholder.typicode.com/users/999\n2026-06-07 06:10:01 [INFO]: API GET Response: 404\n",
+                "mime_type": "text/plain"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@all",
+            "line": 1
+          },
+          {
+            "name": "@api",
+            "line": 1
+          },
+          {
+            "name": "@reqres",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "reqres-user-management-api;create-a-new-user-successfully",
+        "keyword": "Scenario",
+        "line": 13,
+        "name": "Create a new user successfully",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2407492
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 14,
+            "name": "I create a new user with name \"Morpheus\" and job \"Leader\"",
+            "match": {
+              "location": "v2/src/application/steps/api.steps.ts:28"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 49786700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 15,
+            "name": "the API response status should be 201",
+            "match": {
+              "location": "v2/src/application/steps/api.steps.ts:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 431759
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1377532
+            },
+            "embeddings": [
+              {
+                "data": "Status: PASSED. Duration:0s",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "2026-06-07 06:10:01 [INFO]: Starting scenario: Create-a-new-user-successfully\n2026-06-07 06:10:01 [INFO]: API POST Request: https://jsonplaceholder.typicode.com/users\n2026-06-07 06:10:02 [INFO]: API POST Response: 201\n",
+                "mime_type": "text/plain"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@all",
+            "line": 1
+          },
+          {
+            "name": "@api",
+            "line": 1
+          },
+          {
+            "name": "@reqres",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "reqres-user-management-api;update-an-existing-user-successfully",
+        "keyword": "Scenario",
+        "line": 17,
+        "name": "Update an existing user successfully",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 7889678
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 18,
+            "name": "I create a new user with name \"Neo\" and job \"Engineer\"",
+            "match": {
+              "location": "v2/src/application/steps/api.steps.ts:28"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 45764415
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "I update the user's job to \"The One\"",
+            "match": {
+              "location": "v2/src/application/steps/api.steps.ts:36"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 59019892
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 20,
+            "name": "the API response status should be 200",
+            "match": {
+              "location": "v2/src/application/steps/api.steps.ts:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 428474
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1688079
+            },
+            "embeddings": [
+              {
+                "data": "Status: PASSED. Duration:0s",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "2026-06-07 06:10:02 [INFO]: Starting scenario: Update-an-existing-user-successfully\n2026-06-07 06:10:02 [INFO]: API POST Request: https://jsonplaceholder.typicode.com/users\n2026-06-07 06:10:02 [INFO]: API POST Response: 201\n2026-06-07 06:10:02 [INFO]: API PUT Request: https://jsonplaceholder.typicode.com/users/1\n2026-06-07 06:10:02 [INFO]: API PUT Response: 200\n",
+                "mime_type": "text/plain"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@all",
+            "line": 1
+          },
+          {
+            "name": "@api",
+            "line": 1
+          },
+          {
+            "name": "@reqres",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "reqres-user-management-api;delete-a-user-successfully",
+        "keyword": "Scenario",
+        "line": 22,
+        "name": "Delete a user successfully",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2050536
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 23,
+            "name": "I create a new user with name \"Trinity\" and job \"Hacker\"",
+            "match": {
+              "location": "v2/src/application/steps/api.steps.ts:28"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 37954706
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 24,
+            "name": "I delete the user",
+            "match": {
+              "location": "v2/src/application/steps/api.steps.ts:43"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 41320345
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 25,
+            "name": "the API response status should be 200",
+            "match": {
+              "location": "v2/src/application/steps/api.steps.ts:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 333322
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1282599
+            },
+            "embeddings": [
+              {
+                "data": "Status: PASSED. Duration:0s",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "2026-06-07 06:10:02 [INFO]: Starting scenario: Delete-a-user-successfully\n2026-06-07 06:10:02 [INFO]: API POST Request: https://jsonplaceholder.typicode.com/users\n2026-06-07 06:10:02 [INFO]: API POST Response: 201\n2026-06-07 06:10:02 [INFO]: API DELETE Request: https://jsonplaceholder.typicode.com/users/11\n2026-06-07 06:10:02 [INFO]: API DELETE Response: 200\n",
+                "mime_type": "text/plain"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@all",
+            "line": 1
+          },
+          {
+            "name": "@api",
+            "line": 1
+          },
+          {
+            "name": "@reqres",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "reqres-user-management-api",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "ReqRes User Management API",
+    "tags": [
+      {
+        "name": "@all",
+        "line": 1
+      },
+      {
+        "name": "@api",
+        "line": 1
+      },
+      {
+        "name": "@reqres",
+        "line": 1
+      }
+    ],
+    "uri": "v2/tests/api/users.feature"
+  }
+]
