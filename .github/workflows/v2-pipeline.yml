@@ -90,7 +90,9 @@ jobs:
           sudo apt-get install k6
 
       - name: Run V2 Standard Load Test
-        run: npm run test:v2:perf:standard
+        run: |
+          mkdir -p artifacts
+          npm run test:v2:perf:standard
         
       - name: Upload k6 Report
         if: always()
