@@ -9,7 +9,7 @@
     "test": "cross-env ENV=stable HEADLESS=false cucumber-js -c v1/cucumber.mjs --tags=@all",
     "test:v2:ui": "cross-env ENV=stable HEADLESS=false cucumber-js -c v2/cucumber.mjs v2/tests/ui/**/*.feature --tags=@all",
     "test:v2:api": "cross-env ENV=stable HEADLESS=true cucumber-js -c v2/cucumber.mjs v2/tests/api/**/*.feature",
-    "build:perf": "esbuild v2/src/performance/scenarios/api-load-test.ts --bundle --target=es2015 --external:k6 --external:k6/http --external:https://* --outfile=v2/dist/performance/api-load-test.js",
+    "build:perf": "esbuild v2/src/performance/scenarios/api-load-test.ts --bundle --format=esm --target=es2020 --external:k6 --external:k6/http --external:https://* --outfile=v2/dist/performance/api-load-test.js",
     "test:v2:perf:standard": "npm run build:perf && k6 run -e PROFILE=standard v2/dist/performance/api-load-test.js",
     "test:v2:perf:stress": "npm run build:perf && k6 run -e PROFILE=stress v2/dist/performance/api-load-test.js",
     "test:v2:perf:soak": "npm run build:perf && k6 run -e PROFILE=soak v2/dist/performance/api-load-test.js",

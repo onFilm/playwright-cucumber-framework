@@ -10,7 +10,7 @@ on:
 jobs:
   v2-ui-tests:
     name: Run V2 UI Tests
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -40,7 +40,7 @@ jobs:
 
   v2-api-tests:
     name: Run V2 API Tests
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -65,7 +65,7 @@ jobs:
 
   v2-perf-tests:
     name: Run V2 Performance Tests
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
