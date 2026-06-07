@@ -7,6 +7,9 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   v2-ui-tests:
     name: Run V2 UI Tests
@@ -95,3 +98,76 @@ jobs:
         with:
           name: k6-performance-report
           path: artifacts/k6-api-report.html
+
+  publish-reports:
+    name: Publish Reports to GitHub Pages
+    needs: [v2-ui-tests, v2-api-tests, v2-perf-tests]
+    if: always()
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Download UI Reports
+        uses: actions/download-artifact@v4
+        with:
+          name: v2-ui-reports
+          path: public/ui
+          
+      - name: Download API Reports
+        uses: actions/download-artifact@v4
+        with:
+          name: v2-api-reports
+          path: public/api
+          
+      - name: Download Performance Reports
+        uses: actions/download-artifact@v4
+        with:
+          name: k6-performance-report
+          path: public/perf
+          
+      - name: Generate Unified Dashboard
+        run: |
+          cat << 'EOF' > public/index.html
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>V2 Automation Reports Dashboard</title>
+            <style>
+              body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f4f9; color: #333; margin: 0; padding: 40px; }
+              h1 { color: #2c3e50; text-align: center; }
+              .container { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 40px; }
+              .card { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; width: 250px; transition: transform 0.2s; }
+              .card:hover { transform: translateY(-5px); }
+              .card h2 { margin-top: 0; color: #34495e; }
+              .btn { display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #3498db; color: white; text-decoration: none; border-radius: 5px; }
+              .btn:hover { background-color: #2980b9; }
+            </style>
+          </head>
+          <body>
+            <h1>V2 Enterprise Test Automation Dashboard</h1>
+            <div class="container">
+              <div class="card">
+                <h2>UI Tests</h2>
+                <p>Playwright + Cucumber-JS</p>
+                <a href="ui/reports/index-v2.html" class="btn">View Report</a>
+              </div>
+              <div class="card">
+                <h2>API Tests</h2>
+                <p>Playwright + Cucumber-JS</p>
+                <a href="api/reports/index-v2.html" class="btn">View Report</a>
+              </div>
+              <div class="card">
+                <h2>Performance Tests</h2>
+                <p>k6 Load Profiling</p>
+                <a href="perf/k6-api-report.html" class="btn">View Report</a>
+              </div>
+            </div>
+          </body>
+          </html>
+          EOF
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: public
+          branch: gh-pages
