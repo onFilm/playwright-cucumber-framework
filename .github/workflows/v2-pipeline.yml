@@ -27,7 +27,7 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Run V2 UI Tests
-        run: npm run test:v2:ui
+        run: xvfb-run npm run test:v2:ui
         
       - name: Upload UI Test Results
         if: always()
