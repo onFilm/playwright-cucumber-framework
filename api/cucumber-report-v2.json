@@ -14,7 +14,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 16961508
+              "duration": 15764190
             }
           },
           {
@@ -27,7 +27,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 111572179
+              "duration": 86686171
             }
           },
           {
@@ -40,7 +40,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2617522
+              "duration": 2982382
             }
           },
           {
@@ -53,7 +53,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3895467
+              "duration": 5082056
             }
           },
           {
@@ -61,7 +61,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 2216108
+              "duration": 2393125
             },
             "embeddings": [
               {
@@ -69,7 +69,7 @@
                 "mime_type": "text/plain"
               },
               {
-                "data": "2026-06-07 06:31:12 [INFO]: Starting scenario: Fetch-a-specific-user-successfully\n2026-06-07 06:31:12 [INFO]: API GET Request: https://jsonplaceholder.typicode.com/users/2\n2026-06-07 06:31:12 [INFO]: API GET Response: 200\n",
+                "data": "2026-06-14 11:47:17 [INFO]: Starting scenario: Fetch-a-specific-user-successfully\n2026-06-14 11:47:17 [INFO]: API GET Request: https://jsonplaceholder.typicode.com/users/2\n2026-06-14 11:47:17 [INFO]: API GET Response: 200\n",
                 "mime_type": "text/plain"
               }
             ]
@@ -103,7 +103,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 2363700
+              "duration": 2788369
             }
           },
           {
@@ -116,7 +116,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 29064198
+              "duration": 28131559
             }
           },
           {
@@ -129,7 +129,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 476157
+              "duration": 404308
             }
           },
           {
@@ -137,7 +137,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 1302151
+              "duration": 1469167
             },
             "embeddings": [
               {
@@ -145,7 +145,7 @@
                 "mime_type": "text/plain"
               },
               {
-                "data": "2026-06-07 06:31:12 [INFO]: Starting scenario: Attempt-to-fetch-a-non-existent-user\n2026-06-07 06:31:12 [INFO]: API GET Request: https://jsonplaceholder.typicode.com/users/999\n2026-06-07 06:31:12 [INFO]: API GET Response: 404\n",
+                "data": "2026-06-14 11:47:17 [INFO]: Starting scenario: Attempt-to-fetch-a-non-existent-user\n2026-06-14 11:47:17 [INFO]: API GET Request: https://jsonplaceholder.typicode.com/users/999\n2026-06-14 11:47:17 [INFO]: API GET Response: 404\n",
                 "mime_type": "text/plain"
               }
             ]
@@ -179,7 +179,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 2227645
+              "duration": 2264401
             }
           },
           {
@@ -192,7 +192,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 30450286
+              "duration": 49671513
             }
           },
           {
@@ -205,7 +205,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 388525
+              "duration": 268343
             }
           },
           {
@@ -213,7 +213,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 1424555
+              "duration": 1069687
             },
             "embeddings": [
               {
@@ -221,7 +221,7 @@
                 "mime_type": "text/plain"
               },
               {
-                "data": "2026-06-07 06:31:12 [INFO]: Starting scenario: Create-a-new-user-successfully\n2026-06-07 06:31:12 [INFO]: API POST Request: https://jsonplaceholder.typicode.com/users\n2026-06-07 06:31:12 [INFO]: API POST Response: 201\n",
+                "data": "2026-06-14 11:47:17 [INFO]: Starting scenario: Create-a-new-user-successfully\n2026-06-14 11:47:17 [INFO]: API POST Request: https://jsonplaceholder.typicode.com/users\n2026-06-14 11:47:17 [INFO]: API POST Response: 201\n",
                 "mime_type": "text/plain"
               }
             ]
@@ -255,7 +255,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 2252532
+              "duration": 1991092
             }
           },
           {
@@ -268,7 +268,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 33827674
+              "duration": 45443215
             }
           },
           {
@@ -281,7 +281,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 37061494
+              "duration": 89987184
             }
           },
           {
@@ -294,7 +294,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 351308
+              "duration": 323025
             }
           },
           {
@@ -302,7 +302,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 1524537
+              "duration": 1477700
             },
             "embeddings": [
               {
@@ -310,7 +310,7 @@
                 "mime_type": "text/plain"
               },
               {
-                "data": "2026-06-07 06:31:12 [INFO]: Starting scenario: Update-an-existing-user-successfully\n2026-06-07 06:31:12 [INFO]: API POST Request: https://jsonplaceholder.typicode.com/users\n2026-06-07 06:31:12 [INFO]: API POST Response: 201\n2026-06-07 06:31:12 [INFO]: API PUT Request: https://jsonplaceholder.typicode.com/users/1\n2026-06-07 06:31:12 [INFO]: API PUT Response: 200\n",
+                "data": "2026-06-14 11:47:17 [INFO]: Starting scenario: Update-an-existing-user-successfully\n2026-06-14 11:47:17 [INFO]: API POST Request: https://jsonplaceholder.typicode.com/users\n2026-06-14 11:47:17 [INFO]: API POST Response: 201\n2026-06-14 11:47:17 [INFO]: API PUT Request: https://jsonplaceholder.typicode.com/users/1\n2026-06-14 11:47:17 [INFO]: API PUT Response: 200\n",
                 "mime_type": "text/plain"
               }
             ]
@@ -344,7 +344,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 2158280
+              "duration": 1934106
             }
           },
           {
@@ -357,7 +357,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 25916858
+              "duration": 50877477
             }
           },
           {
@@ -370,7 +370,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 29396608
+              "duration": 43231328
             }
           },
           {
@@ -383,7 +383,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 272500
+              "duration": 307912
             }
           },
           {
@@ -391,7 +391,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 1304514
+              "duration": 1196547
             },
             "embeddings": [
               {
@@ -399,7 +399,7 @@
                 "mime_type": "text/plain"
               },
               {
-                "data": "2026-06-07 06:31:12 [INFO]: Starting scenario: Delete-a-user-successfully\n2026-06-07 06:31:12 [INFO]: API POST Request: https://jsonplaceholder.typicode.com/users\n2026-06-07 06:31:12 [INFO]: API POST Response: 201\n2026-06-07 06:31:12 [INFO]: API DELETE Request: https://jsonplaceholder.typicode.com/users/11\n2026-06-07 06:31:12 [INFO]: API DELETE Response: 200\n",
+                "data": "2026-06-14 11:47:17 [INFO]: Starting scenario: Delete-a-user-successfully\n2026-06-14 11:47:17 [INFO]: API POST Request: https://jsonplaceholder.typicode.com/users\n2026-06-14 11:47:17 [INFO]: API POST Response: 201\n2026-06-14 11:47:17 [INFO]: API DELETE Request: https://jsonplaceholder.typicode.com/users/11\n2026-06-14 11:47:18 [INFO]: API DELETE Response: 200\n",
                 "mime_type": "text/plain"
               }
             ]
