@@ -62,7 +62,7 @@ Before(async function (this: ICustomWorld, {pickle}: ITestCaseHookParameter) {
   console.log("Inside before hook");
   this.testEnv = process.env.ENV;
   this.browser = process.env.BROWSER;
-  this.baseurl = process.env.BASEURL;
+  this.baseurl = config.BASE_URL;
   this.apiurl = process.env.APIURL;
   this.feature = pickle;
   this.startTime = new Date();
