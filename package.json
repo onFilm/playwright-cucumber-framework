@@ -60,7 +60,7 @@
     "reflect-metadata": "^0.2.2",
     "rimraf": "5.0.1",
     "saucectl": "^0.146.0",
-    "test-results-reporter": "^1.0.17",
+    "testbeats": "^2.7.0",
     "ts-node": "10.9.1",
     "tsyringe": "^4.10.0",
     "typescript": "5.1.3",
